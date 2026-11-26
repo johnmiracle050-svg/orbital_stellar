@@ -13,8 +13,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
@@ -28,8 +28,8 @@
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         },
         {
@@ -53,15 +53,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -77,22 +77,22 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         },
         {
           "name": "desired_amounts",
           "type": {
-            "item": "u128",
-            "type": "vec"
+            "type": "vec",
+            "item": "u128"
           }
         },
         {
@@ -101,14 +101,14 @@
         }
       ],
       "returns": {
+        "type": "tuple",
         "elements": [
           {
-            "item": "u128",
-            "type": "vec"
+            "type": "vec",
+            "item": "u128"
           },
           "u128"
-        ],
-        "type": "tuple"
+        ]
       }
     },
     {
@@ -122,21 +122,21 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
       "returns": {
-        "key": "symbol",
         "type": "map",
+        "key": "symbol",
         "value": "val"
       }
     },
@@ -146,15 +146,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -166,15 +166,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -190,15 +190,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         },
         {
@@ -208,14 +208,14 @@
         {
           "name": "min_amounts",
           "type": {
-            "item": "u128",
-            "type": "vec"
+            "type": "vec",
+            "item": "u128"
           }
         }
       ],
       "returns": {
-        "item": "u128",
-        "type": "vec"
+        "type": "vec",
+        "item": "u128"
       }
     },
     {
@@ -229,17 +229,17 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         }
       ],
       "returns": {
-        "key": {
-          "size": 32,
-          "type": "bytes_n"
-        },
         "type": "map",
+        "key": {
+          "type": "bytes_n",
+          "size": 32
+        },
         "value": "address"
       }
     },
@@ -249,15 +249,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -272,8 +272,8 @@
         }
       ],
       "returns": {
-        "item": "address",
-        "type": "vec"
+        "type": "vec",
+        "item": "address"
       }
     },
     {
@@ -287,6 +287,64 @@
       "returns": "void"
     },
     {
+      "name": "swap_split",
+      "params": [
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "stages",
+          "type": {
+            "type": "vec",
+            "item": {
+              "type": "vec",
+              "item": {
+                "type": "tuple",
+                "elements": [
+                  {
+                    "type": "vec",
+                    "item": {
+                      "type": "tuple",
+                      "elements": [
+                        {
+                          "type": "vec",
+                          "item": "address"
+                        },
+                        {
+                          "type": "bytes_n",
+                          "size": 32
+                        },
+                        "address"
+                      ]
+                    }
+                  },
+                  "u32"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "token_in",
+          "type": "address"
+        },
+        {
+          "name": "token_out",
+          "type": "address"
+        },
+        {
+          "name": "in_amount",
+          "type": "u128"
+        },
+        {
+          "name": "out_min",
+          "type": "u128"
+        }
+      ],
+      "returns": "u128"
+    },
+    {
       "name": "remove_pool",
       "params": [
         {
@@ -296,15 +354,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -316,21 +374,21 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
       "returns": {
-        "item": "u128",
-        "type": "vec"
+        "type": "vec",
+        "item": "u128"
       }
     },
     {
@@ -343,21 +401,21 @@
         {
           "name": "swaps_chain",
           "type": {
+            "type": "vec",
             "item": {
+              "type": "tuple",
               "elements": [
                 {
-                  "item": "address",
-                  "type": "vec"
+                  "type": "vec",
+                  "item": "address"
                 },
                 {
-                  "size": 32,
-                  "type": "bytes_n"
+                  "type": "bytes_n",
+                  "size": 32
                 },
                 "address"
-              ],
-              "type": "tuple"
-            },
-            "type": "vec"
+              ]
+            }
           }
         },
         {
@@ -384,8 +442,8 @@
         }
       ],
       "returns": {
-        "size": 32,
-        "type": "bytes_n"
+        "type": "bytes_n",
+        "size": 32
       }
     },
     {
@@ -399,8 +457,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
@@ -414,8 +472,8 @@
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         },
         {
@@ -431,15 +489,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -455,8 +513,8 @@
         {
           "name": "new_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -472,8 +530,8 @@
         {
           "name": "new_wasm_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -489,8 +547,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         }
       ],
@@ -516,8 +574,8 @@
         {
           "name": "new_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -533,15 +591,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -562,6 +620,25 @@
       "returns": "void"
     },
     {
+      "name": "get_reward_token",
+      "params": [
+        {
+          "name": "tokens",
+          "type": {
+            "type": "vec",
+            "item": "address"
+          }
+        }
+      ],
+      "returns": {
+        "type": "option",
+        "inner": {
+          "type": "tuple",
+          "elements": ["u32", "bool", "u256"]
+        }
+      }
+    },
+    {
       "name": "get_rewards_info",
       "params": [
         {
@@ -571,21 +648,21 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
       "returns": {
-        "key": "symbol",
         "type": "map",
+        "key": "symbol",
         "value": "i128"
       }
     },
@@ -595,15 +672,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -642,8 +719,8 @@
       "name": "get_rewards_config",
       "params": [],
       "returns": {
-        "key": "symbol",
         "type": "map",
+        "key": "symbol",
         "value": "i128"
       }
     },
@@ -657,8 +734,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
@@ -667,14 +744,14 @@
         }
       ],
       "returns": {
+        "type": "tuple",
         "elements": [
           {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           },
           "address"
-        ],
-        "type": "tuple"
+        ]
       }
     },
     {
@@ -701,15 +778,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -721,8 +798,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         }
       ],
@@ -746,11 +823,11 @@
       "name": "get_privileged_addrs",
       "params": [],
       "returns": {
-        "key": "symbol",
         "type": "map",
+        "key": "symbol",
         "value": {
-          "item": "address",
-          "type": "vec"
+          "type": "vec",
+          "item": "address"
         }
       }
     },
@@ -764,8 +841,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
@@ -774,14 +851,14 @@
         }
       ],
       "returns": {
+        "type": "tuple",
         "elements": [
           {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           },
           "address"
-        ],
-        "type": "tuple"
+        ]
       }
     },
     {
@@ -806,8 +883,8 @@
         {
           "name": "emergency_pause_admins",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
@@ -835,17 +912,17 @@
         {
           "name": "tokens_votes",
           "type": {
+            "type": "vec",
             "item": {
+              "type": "tuple",
               "elements": [
                 {
-                  "item": "address",
-                  "type": "vec"
+                  "type": "vec",
+                  "item": "address"
                 },
                 "u32"
-              ],
-              "type": "tuple"
-            },
-            "type": "vec"
+              ]
+            }
           }
         }
       ],
@@ -855,14 +932,14 @@
       "name": "get_tokens_for_reward",
       "params": [],
       "returns": {
-        "key": {
-          "item": "address",
-          "type": "vec"
-        },
         "type": "map",
+        "key": {
+          "type": "vec",
+          "item": "address"
+        },
         "value": {
-          "elements": ["u32", "bool", "u256"],
-          "type": "tuple"
+          "type": "tuple",
+          "elements": ["u32", "bool", "u256"]
         }
       }
     },
@@ -870,6 +947,11 @@
       "name": "get_tokens_sets_count",
       "params": [],
       "returns": "u128"
+    },
+    {
+      "name": "get_reward_token_count",
+      "params": [],
+      "returns": "u32"
     },
     {
       "name": "init_concentrated_pool",
@@ -881,8 +963,8 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
@@ -891,14 +973,14 @@
         }
       ],
       "returns": {
+        "type": "tuple",
         "elements": [
           {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           },
           "address"
-        ],
-        "type": "tuple"
+        ]
       }
     },
     {
@@ -911,8 +993,8 @@
         {
           "name": "new_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -979,15 +1061,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1027,8 +1109,8 @@
         {
           "name": "new_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1098,24 +1180,24 @@
         }
       ],
       "returns": {
+        "type": "vec",
         "item": {
+          "type": "tuple",
           "elements": [
             {
-              "item": "address",
-              "type": "vec"
+              "type": "vec",
+              "item": "address"
             },
             {
-              "key": {
-                "size": 32,
-                "type": "bytes_n"
-              },
               "type": "map",
+              "key": {
+                "type": "bytes_n",
+                "size": 32
+              },
               "value": "address"
             }
-          ],
-          "type": "tuple"
-        },
-        "type": "vec"
+          ]
+        }
       }
     },
     {
@@ -1128,15 +1210,15 @@
         {
           "name": "pool_tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         },
         {
@@ -1150,8 +1232,8 @@
         {
           "name": "start_at",
           "type": {
-            "inner": "u64",
-            "type": "option"
+            "type": "option",
+            "inner": "u64"
           }
         },
         {
@@ -1161,21 +1243,21 @@
         {
           "name": "swaps_chain_proof",
           "type": {
+            "type": "vec",
             "item": {
+              "type": "tuple",
               "elements": [
                 {
-                  "item": "address",
-                  "type": "vec"
+                  "type": "vec",
+                  "item": "address"
                 },
                 {
-                  "size": 32,
-                  "type": "bytes_n"
+                  "type": "bytes_n",
+                  "size": 32
                 },
                 "address"
-              ],
-              "type": "tuple"
-            },
-            "type": "vec"
+              ]
+            }
           }
         }
       ],
@@ -1191,8 +1273,8 @@
         {
           "name": "new_hash",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1239,15 +1321,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1268,21 +1350,21 @@
         {
           "name": "swaps_chain",
           "type": {
+            "type": "vec",
             "item": {
+              "type": "tuple",
               "elements": [
                 {
-                  "item": "address",
-                  "type": "vec"
+                  "type": "vec",
+                  "item": "address"
                 },
                 {
-                  "size": 32,
-                  "type": "bytes_n"
+                  "type": "bytes_n",
+                  "size": 32
                 },
                 "address"
-              ],
-              "type": "tuple"
-            },
-            "type": "vec"
+              ]
+            }
           }
         },
         {
@@ -1311,15 +1393,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1331,15 +1413,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1359,15 +1441,15 @@
         {
           "name": "tokens",
           "type": {
-            "item": "address",
-            "type": "vec"
+            "type": "vec",
+            "item": "address"
           }
         },
         {
           "name": "pool_index",
           "type": {
-            "size": 32,
-            "type": "bytes_n"
+            "type": "bytes_n",
+            "size": 32
           }
         }
       ],
@@ -1415,392 +1497,21 @@
   "name": "Aquarius AMM Router",
   "network": "mainnet",
   "types": {
-    "AccessControlError": {
-      "kind": "enum",
-      "name": "AccessControlError",
-      "variants": [
-        {
-          "discriminant": 101,
-          "name": "RoleNotFound"
-        },
-        {
-          "discriminant": 102,
-          "name": "Unauthorized"
-        },
-        {
-          "discriminant": 103,
-          "name": "AdminAlreadySet"
-        },
-        {
-          "discriminant": 104,
-          "name": "BadRoleUsage"
-        },
-        {
-          "discriminant": 2906,
-          "name": "AnotherActionActive"
-        },
-        {
-          "discriminant": 2907,
-          "name": "NoActionActive"
-        },
-        {
-          "discriminant": 2908,
-          "name": "ActionNotReadyYet"
-        }
-      ]
-    },
     "Error": {
       "kind": "enum",
       "name": "Error",
       "variants": [
         {
-          "discriminant": 2906,
-          "name": "AnotherActionActive"
+          "name": "AnotherActionActive",
+          "discriminant": 2906
         },
         {
-          "discriminant": 2907,
-          "name": "NoActionActive"
+          "name": "NoActionActive",
+          "discriminant": 2907
         },
         {
-          "discriminant": 2908,
-          "name": "ActionNotReadyYet"
-        }
-      ]
-    },
-    "GlobalRewardsConfig": {
-      "fields": [
-        {
-          "name": "expired_at",
-          "type": "u64"
-        },
-        {
-          "name": "tps",
-          "type": "u128"
-        }
-      ],
-      "kind": "struct",
-      "name": "GlobalRewardsConfig"
-    },
-    "LiquidityPoolData": {
-      "fields": [
-        {
-          "name": "address",
-          "type": "address"
-        },
-        {
-          "name": "pool_type",
-          "type": {
-            "name": "LiquidityPoolType",
-            "type": "named"
-          }
-        }
-      ],
-      "kind": "struct",
-      "name": "LiquidityPoolData"
-    },
-    "LiquidityPoolRewardInfo": {
-      "fields": [
-        {
-          "name": "processed",
-          "type": "bool"
-        },
-        {
-          "name": "total_liquidity",
-          "type": "u256"
-        },
-        {
-          "name": "voting_share",
-          "type": "u32"
-        }
-      ],
-      "kind": "struct",
-      "name": "LiquidityPoolRewardInfo"
-    },
-    "LiquidityPoolRouterError": {
-      "kind": "enum",
-      "name": "LiquidityPoolRouterError",
-      "variants": [
-        {
-          "discriminant": 301,
-          "name": "PoolNotFound"
-        },
-        {
-          "discriminant": 302,
-          "name": "BadFee"
-        },
-        {
-          "discriminant": 303,
-          "name": "StableswapHashMissing"
-        },
-        {
-          "discriminant": 305,
-          "name": "PoolsOverMax"
-        },
-        {
-          "discriminant": 306,
-          "name": "StableswapPoolsOverMax"
-        },
-        {
-          "discriminant": 307,
-          "name": "PathIsEmpty"
-        },
-        {
-          "discriminant": 308,
-          "name": "TokensAreNotForReward"
-        },
-        {
-          "discriminant": 309,
-          "name": "LiquidityNotFilled"
-        },
-        {
-          "discriminant": 310,
-          "name": "LiquidityAlreadyFilled"
-        },
-        {
-          "discriminant": 311,
-          "name": "VotingShareExceedsMax"
-        },
-        {
-          "discriminant": 312,
-          "name": "LiquidityCalculationError"
-        },
-        {
-          "discriminant": 313,
-          "name": "RewardsNotConfigured"
-        },
-        {
-          "discriminant": 314,
-          "name": "RewardsAlreadyConfigured"
-        },
-        {
-          "discriminant": 315,
-          "name": "DuplicatesNotAllowed"
-        },
-        {
-          "discriminant": 316,
-          "name": "InvalidPoolType"
-        },
-        {
-          "discriminant": 317,
-          "name": "RewardDurationTooShort"
-        },
-        {
-          "discriminant": 318,
-          "name": "RewardAmountTooLow"
-        },
-        {
-          "discriminant": 319,
-          "name": "GaugeRewardsDisabledForPool"
-        },
-        {
-          "discriminant": 320,
-          "name": "UnsupportedTokensNum"
-        },
-        {
-          "discriminant": 321,
-          "name": "PathMustEndWithRewardToken"
-        },
-        {
-          "discriminant": 322,
-          "name": "ConcentratedPoolsOverMax"
-        },
-        {
-          "discriminant": 323,
-          "name": "RewardTokenChangeWhileActive"
-        },
-        {
-          "discriminant": 324,
-          "name": "SwapChainAmountIsZero"
-        },
-        {
-          "discriminant": 325,
-          "name": "RewardAmountTooHigh"
-        },
-        {
-          "discriminant": 326,
-          "name": "UnsupportedTokenDecimals"
-        },
-        {
-          "discriminant": 2002,
-          "name": "TokensNotSorted"
-        },
-        {
-          "discriminant": 2020,
-          "name": "InMaxNotSatisfied"
-        }
-      ]
-    },
-    "LiquidityPoolType": {
-      "kind": "enum",
-      "name": "LiquidityPoolType",
-      "variants": [
-        {
-          "discriminant": 0,
-          "name": "MissingPool"
-        },
-        {
-          "discriminant": 1,
-          "name": "ConstantProduct"
-        },
-        {
-          "discriminant": 2,
-          "name": "StableSwap"
-        },
-        {
-          "discriminant": 3,
-          "name": "Concentrated"
-        }
-      ]
-    },
-    "LiquidityPoolValidationError": {
-      "kind": "enum",
-      "name": "LiquidityPoolValidationError",
-      "variants": [
-        {
-          "discriminant": 2001,
-          "name": "WrongInputVecSize"
-        },
-        {
-          "discriminant": 2003,
-          "name": "FeeOutOfBounds"
-        },
-        {
-          "discriminant": 2004,
-          "name": "AllCoinsRequired"
-        },
-        {
-          "discriminant": 2005,
-          "name": "InMinNotSatisfied"
-        },
-        {
-          "discriminant": 2006,
-          "name": "OutMinNotSatisfied"
-        },
-        {
-          "discriminant": 2007,
-          "name": "CannotSwapSameToken"
-        },
-        {
-          "discriminant": 2008,
-          "name": "InTokenOutOfBounds"
-        },
-        {
-          "discriminant": 2009,
-          "name": "OutTokenOutOfBounds"
-        },
-        {
-          "discriminant": 2010,
-          "name": "EmptyPool"
-        },
-        {
-          "discriminant": 2011,
-          "name": "InvalidDepositAmount"
-        },
-        {
-          "discriminant": 2012,
-          "name": "AdminFeeOutOfBounds"
-        },
-        {
-          "discriminant": 2013,
-          "name": "UnknownPoolType"
-        },
-        {
-          "discriminant": 2014,
-          "name": "ZeroSharesBurned"
-        },
-        {
-          "discriminant": 2015,
-          "name": "TooManySharesBurned"
-        },
-        {
-          "discriminant": 2017,
-          "name": "CannotComparePools"
-        },
-        {
-          "discriminant": 2018,
-          "name": "ZeroAmount"
-        },
-        {
-          "discriminant": 2019,
-          "name": "InsufficientBalance"
-        },
-        {
-          "discriminant": 2020,
-          "name": "InMaxNotSatisfied"
-        }
-      ]
-    },
-    "MathError": {
-      "kind": "enum",
-      "name": "MathError",
-      "variants": [
-        {
-          "discriminant": 510,
-          "name": "NumberOverflow"
-        }
-      ]
-    },
-    "PoolError": {
-      "kind": "enum",
-      "name": "PoolError",
-      "variants": [
-        {
-          "discriminant": 401,
-          "name": "PoolAlreadyExists"
-        },
-        {
-          "discriminant": 404,
-          "name": "PoolNotFound"
-        }
-      ]
-    },
-    "PoolRewardConfig": {
-      "fields": [
-        {
-          "name": "expired_at",
-          "type": "u64"
-        },
-        {
-          "name": "tps",
-          "type": "u128"
-        }
-      ],
-      "kind": "struct",
-      "name": "PoolRewardConfig"
-    },
-    "PoolRewardData": {
-      "fields": [
-        {
-          "name": "accumulated",
-          "type": "u128"
-        },
-        {
-          "name": "block",
-          "type": "u64"
-        },
-        {
-          "name": "claimed",
-          "type": "u128"
-        },
-        {
-          "name": "last_time",
-          "type": "u64"
-        }
-      ],
-      "kind": "struct",
-      "name": "PoolRewardData"
-    },
-    "RewardsError": {
-      "kind": "enum",
-      "name": "RewardsError",
-      "variants": [
-        {
-          "discriminant": 701,
-          "name": "PastTimeNotAllowed"
-        },
-        {
-          "discriminant": 702,
-          "name": "SameRewardsConfig"
+          "name": "ActionNotReadyYet",
+          "discriminant": 2908
         }
       ]
     },
@@ -1809,80 +1520,284 @@
       "name": "StorageError",
       "variants": [
         {
-          "discriminant": 201,
-          "name": "AlreadyInitialized"
+          "name": "AlreadyInitialized",
+          "discriminant": 201
         },
         {
-          "discriminant": 501,
-          "name": "ValueNotInitialized"
+          "name": "ValueNotInitialized",
+          "discriminant": 501
         },
         {
-          "discriminant": 502,
-          "name": "ValueMissing"
+          "name": "ValueMissing",
+          "discriminant": 502
         },
         {
-          "discriminant": 503,
-          "name": "ValueConversionError"
+          "name": "ValueConversionError",
+          "discriminant": 503
         }
       ]
     },
-    "UserRewardData": {
-      "fields": [
+    "AccessControlError": {
+      "kind": "enum",
+      "name": "AccessControlError",
+      "variants": [
         {
-          "name": "last_block",
-          "type": "u64"
+          "name": "RoleNotFound",
+          "discriminant": 101
         },
         {
-          "name": "pool_accumulated",
-          "type": "u128"
+          "name": "Unauthorized",
+          "discriminant": 102
         },
         {
-          "name": "to_claim",
-          "type": "u128"
+          "name": "AdminAlreadySet",
+          "discriminant": 103
+        },
+        {
+          "name": "BadRoleUsage",
+          "discriminant": 104
+        },
+        {
+          "name": "AnotherActionActive",
+          "discriminant": 2906
+        },
+        {
+          "name": "NoActionActive",
+          "discriminant": 2907
+        },
+        {
+          "name": "ActionNotReadyYet",
+          "discriminant": 2908
         }
-      ],
-      "kind": "struct",
-      "name": "UserRewardData"
+      ]
     },
-    "WASMDataKey": {
-      "cases": [
+    "LiquidityPoolValidationError": {
+      "kind": "enum",
+      "name": "LiquidityPoolValidationError",
+      "variants": [
         {
-          "fields": [],
-          "name": "TokenHash"
+          "name": "WrongInputVecSize",
+          "discriminant": 2001
         },
         {
-          "fields": [],
-          "name": "TokenFutureWASM"
+          "name": "FeeOutOfBounds",
+          "discriminant": 2003
         },
         {
-          "fields": [],
-          "name": "GaugeWASM"
+          "name": "AllCoinsRequired",
+          "discriminant": 2004
         },
         {
-          "fields": [],
-          "name": "FutureGaugeWASM"
+          "name": "InMinNotSatisfied",
+          "discriminant": 2005
         },
         {
-          "fields": [],
-          "name": "ConstantPoolHash"
+          "name": "OutMinNotSatisfied",
+          "discriminant": 2006
         },
         {
-          "fields": [],
-          "name": "StableSwapPoolHash"
+          "name": "CannotSwapSameToken",
+          "discriminant": 2007
+        },
+        {
+          "name": "InTokenOutOfBounds",
+          "discriminant": 2008
+        },
+        {
+          "name": "OutTokenOutOfBounds",
+          "discriminant": 2009
+        },
+        {
+          "name": "EmptyPool",
+          "discriminant": 2010
+        },
+        {
+          "name": "InvalidDepositAmount",
+          "discriminant": 2011
+        },
+        {
+          "name": "AdminFeeOutOfBounds",
+          "discriminant": 2012
+        },
+        {
+          "name": "UnknownPoolType",
+          "discriminant": 2013
+        },
+        {
+          "name": "ZeroSharesBurned",
+          "discriminant": 2014
+        },
+        {
+          "name": "TooManySharesBurned",
+          "discriminant": 2015
+        },
+        {
+          "name": "CannotComparePools",
+          "discriminant": 2017
+        },
+        {
+          "name": "ZeroAmount",
+          "discriminant": 2018
+        },
+        {
+          "name": "InsufficientBalance",
+          "discriminant": 2019
+        },
+        {
+          "name": "InMaxNotSatisfied",
+          "discriminant": 2020
         }
-      ],
-      "kind": "union",
-      "name": "WASMDataKey"
+      ]
+    },
+    "LiquidityPoolRouterError": {
+      "kind": "enum",
+      "name": "LiquidityPoolRouterError",
+      "variants": [
+        {
+          "name": "PoolNotFound",
+          "discriminant": 301
+        },
+        {
+          "name": "BadFee",
+          "discriminant": 302
+        },
+        {
+          "name": "StableswapHashMissing",
+          "discriminant": 303
+        },
+        {
+          "name": "PoolsOverMax",
+          "discriminant": 305
+        },
+        {
+          "name": "StableswapPoolsOverMax",
+          "discriminant": 306
+        },
+        {
+          "name": "PathIsEmpty",
+          "discriminant": 307
+        },
+        {
+          "name": "TokensAreNotForReward",
+          "discriminant": 308
+        },
+        {
+          "name": "LiquidityNotFilled",
+          "discriminant": 309
+        },
+        {
+          "name": "LiquidityAlreadyFilled",
+          "discriminant": 310
+        },
+        {
+          "name": "VotingShareExceedsMax",
+          "discriminant": 311
+        },
+        {
+          "name": "LiquidityCalculationError",
+          "discriminant": 312
+        },
+        {
+          "name": "RewardsNotConfigured",
+          "discriminant": 313
+        },
+        {
+          "name": "RewardsAlreadyConfigured",
+          "discriminant": 314
+        },
+        {
+          "name": "DuplicatesNotAllowed",
+          "discriminant": 315
+        },
+        {
+          "name": "InvalidPoolType",
+          "discriminant": 316
+        },
+        {
+          "name": "RewardDurationTooShort",
+          "discriminant": 317
+        },
+        {
+          "name": "RewardAmountTooLow",
+          "discriminant": 318
+        },
+        {
+          "name": "GaugeRewardsDisabledForPool",
+          "discriminant": 319
+        },
+        {
+          "name": "UnsupportedTokensNum",
+          "discriminant": 320
+        },
+        {
+          "name": "PathMustEndWithRewardToken",
+          "discriminant": 321
+        },
+        {
+          "name": "ConcentratedPoolsOverMax",
+          "discriminant": 322
+        },
+        {
+          "name": "RewardTokenChangeWhileActive",
+          "discriminant": 323
+        },
+        {
+          "name": "SwapChainAmountIsZero",
+          "discriminant": 324
+        },
+        {
+          "name": "RewardAmountTooHigh",
+          "discriminant": 325
+        },
+        {
+          "name": "UnsupportedTokenDecimals",
+          "discriminant": 326
+        },
+        {
+          "name": "SwapSplitInvalidShares",
+          "discriminant": 327
+        },
+        {
+          "name": "SwapSplitEndMismatch",
+          "discriminant": 328
+        },
+        {
+          "name": "SwapSplitPlanTooLarge",
+          "discriminant": 329
+        },
+        {
+          "name": "TokensNotSorted",
+          "discriminant": 2002
+        },
+        {
+          "name": "InMaxNotSatisfied",
+          "discriminant": 2020
+        }
+      ]
+    },
+    "PoolError": {
+      "kind": "enum",
+      "name": "PoolError",
+      "variants": [
+        {
+          "name": "PoolAlreadyExists",
+          "discriminant": 401
+        },
+        {
+          "name": "PoolNotFound",
+          "discriminant": 404
+        }
+      ]
     }
   },
   "version": "0.0.0",
   "xdrEntries": [
-    "AAAABAAAAAAAAAAAAAAAGExpcXVpZGl0eVBvb2xSb3V0ZXJFcnJvcgAAABsAAAAAAAAADFBvb2xOb3RGb3VuZAAAAS0AAAAAAAAABkJhZEZlZQAAAAABLgAAAAAAAAAVU3RhYmxlc3dhcEhhc2hNaXNzaW5nAAAAAAABLwAAAAAAAAAMUG9vbHNPdmVyTWF4AAABMQAAAAAAAAAWU3RhYmxlc3dhcFBvb2xzT3Zlck1heAAAAAABMgAAAAAAAAALUGF0aElzRW1wdHkAAAABMwAAAAAAAAAVVG9rZW5zQXJlTm90Rm9yUmV3YXJkAAAAAAABNAAAAAAAAAASTGlxdWlkaXR5Tm90RmlsbGVkAAAAAAE1AAAAAAAAABZMaXF1aWRpdHlBbHJlYWR5RmlsbGVkAAAAAAE2AAAAAAAAABVWb3RpbmdTaGFyZUV4Y2VlZHNNYXgAAAAAAAE3AAAAAAAAABlMaXF1aWRpdHlDYWxjdWxhdGlvbkVycm9yAAAAAAABOAAAAAAAAAAUUmV3YXJkc05vdENvbmZpZ3VyZWQAAAE5AAAAAAAAABhSZXdhcmRzQWxyZWFkeUNvbmZpZ3VyZWQAAAE6AAAAAAAAABREdXBsaWNhdGVzTm90QWxsb3dlZAAAATsAAAAAAAAAD0ludmFsaWRQb29sVHlwZQAAAAE8AAAAAAAAABZSZXdhcmREdXJhdGlvblRvb1Nob3J0AAAAAAE9AAAAAAAAABJSZXdhcmRBbW91bnRUb29Mb3cAAAAAAT4AAAAAAAAAG0dhdWdlUmV3YXJkc0Rpc2FibGVkRm9yUG9vbAAAAAE/AAAAAAAAABRVbnN1cHBvcnRlZFRva2Vuc051bQAAAUAAAAAAAAAAGlBhdGhNdXN0RW5kV2l0aFJld2FyZFRva2VuAAAAAAFBAAAAAAAAABhDb25jZW50cmF0ZWRQb29sc092ZXJNYXgAAAFCAAAAAAAAABxSZXdhcmRUb2tlbkNoYW5nZVdoaWxlQWN0aXZlAAABQwAAAAAAAAAVU3dhcENoYWluQW1vdW50SXNaZXJvAAAAAAABRAAAAAAAAAATUmV3YXJkQW1vdW50VG9vSGlnaAAAAAFFAAAAAAAAABhVbnN1cHBvcnRlZFRva2VuRGVjaW1hbHMAAAFGAAAAAAAAAA9Ub2tlbnNOb3RTb3J0ZWQAAAAH0gAAAAAAAAARSW5NYXhOb3RTYXRpc2ZpZWQAAAAAAAfk",
+    "AAAABAAAAAAAAAAAAAAABUVycm9yAAAAAAAAAwAAAAAAAAATQW5vdGhlckFjdGlvbkFjdGl2ZQAAAAtaAAAAAAAAAA5Ob0FjdGlvbkFjdGl2ZQAAAAALWwAAAAAAAAARQWN0aW9uTm90UmVhZHlZZXQAAAAAAAtc",
+    "AAAABAAAAAAAAAAAAAAADFN0b3JhZ2VFcnJvcgAAAAQAAAAAAAAAEkFscmVhZHlJbml0aWFsaXplZAAAAAAAyQAAAAAAAAATVmFsdWVOb3RJbml0aWFsaXplZAAAAAH1AAAAAAAAAAxWYWx1ZU1pc3NpbmcAAAH2AAAAAAAAABRWYWx1ZUNvbnZlcnNpb25FcnJvcgAAAfc=",
+    "AAAABAAAAAAAAAAAAAAAEkFjY2Vzc0NvbnRyb2xFcnJvcgAAAAAABwAAAAAAAAAMUm9sZU5vdEZvdW5kAAAAZQAAAAAAAAAMVW5hdXRob3JpemVkAAAAZgAAAAAAAAAPQWRtaW5BbHJlYWR5U2V0AAAAAGcAAAAAAAAADEJhZFJvbGVVc2FnZQAAAGgAAAAAAAAAE0Fub3RoZXJBY3Rpb25BY3RpdmUAAAALWgAAAAAAAAAOTm9BY3Rpb25BY3RpdmUAAAAAC1sAAAAAAAAAEUFjdGlvbk5vdFJlYWR5WWV0AAAAAAALXA==",
+    "AAAABAAAAAAAAAAAAAAAHExpcXVpZGl0eVBvb2xWYWxpZGF0aW9uRXJyb3IAAAASAAAAAAAAABFXcm9uZ0lucHV0VmVjU2l6ZQAAAAAAB9EAAAAAAAAADkZlZU91dE9mQm91bmRzAAAAAAfTAAAAAAAAABBBbGxDb2luc1JlcXVpcmVkAAAH1AAAAAAAAAARSW5NaW5Ob3RTYXRpc2ZpZWQAAAAAAAfVAAAAAAAAABJPdXRNaW5Ob3RTYXRpc2ZpZWQAAAAAB9YAAAAAAAAAE0Nhbm5vdFN3YXBTYW1lVG9rZW4AAAAH1wAAAAAAAAASSW5Ub2tlbk91dE9mQm91bmRzAAAAAAfYAAAAAAAAABNPdXRUb2tlbk91dE9mQm91bmRzAAAAB9kAAAAAAAAACUVtcHR5UG9vbAAAAAAAB9oAAAAAAAAAFEludmFsaWREZXBvc2l0QW1vdW50AAAH2wAAAAAAAAATQWRtaW5GZWVPdXRPZkJvdW5kcwAAAAfcAAAAAAAAAA9Vbmtub3duUG9vbFR5cGUAAAAH3QAAAAAAAAAQWmVyb1NoYXJlc0J1cm5lZAAAB94AAAAAAAAAE1Rvb01hbnlTaGFyZXNCdXJuZWQAAAAH3wAAAAAAAAASQ2Fubm90Q29tcGFyZVBvb2xzAAAAAAfhAAAAAAAAAApaZXJvQW1vdW50AAAAAAfiAAAAAAAAABNJbnN1ZmZpY2llbnRCYWxhbmNlAAAAB+MAAAAAAAAAEUluTWF4Tm90U2F0aXNmaWVkAAAAAAAH5A==",
+    "AAAABAAAAAAAAAAAAAAAGExpcXVpZGl0eVBvb2xSb3V0ZXJFcnJvcgAAAB4AAAAAAAAADFBvb2xOb3RGb3VuZAAAAS0AAAAAAAAABkJhZEZlZQAAAAABLgAAAAAAAAAVU3RhYmxlc3dhcEhhc2hNaXNzaW5nAAAAAAABLwAAAAAAAAAMUG9vbHNPdmVyTWF4AAABMQAAAAAAAAAWU3RhYmxlc3dhcFBvb2xzT3Zlck1heAAAAAABMgAAAAAAAAALUGF0aElzRW1wdHkAAAABMwAAAAAAAAAVVG9rZW5zQXJlTm90Rm9yUmV3YXJkAAAAAAABNAAAAAAAAAASTGlxdWlkaXR5Tm90RmlsbGVkAAAAAAE1AAAAAAAAABZMaXF1aWRpdHlBbHJlYWR5RmlsbGVkAAAAAAE2AAAAAAAAABVWb3RpbmdTaGFyZUV4Y2VlZHNNYXgAAAAAAAE3AAAAAAAAABlMaXF1aWRpdHlDYWxjdWxhdGlvbkVycm9yAAAAAAABOAAAAAAAAAAUUmV3YXJkc05vdENvbmZpZ3VyZWQAAAE5AAAAAAAAABhSZXdhcmRzQWxyZWFkeUNvbmZpZ3VyZWQAAAE6AAAAAAAAABREdXBsaWNhdGVzTm90QWxsb3dlZAAAATsAAAAAAAAAD0ludmFsaWRQb29sVHlwZQAAAAE8AAAAAAAAABZSZXdhcmREdXJhdGlvblRvb1Nob3J0AAAAAAE9AAAAAAAAABJSZXdhcmRBbW91bnRUb29Mb3cAAAAAAT4AAAAAAAAAG0dhdWdlUmV3YXJkc0Rpc2FibGVkRm9yUG9vbAAAAAE/AAAAAAAAABRVbnN1cHBvcnRlZFRva2Vuc051bQAAAUAAAAAAAAAAGlBhdGhNdXN0RW5kV2l0aFJld2FyZFRva2VuAAAAAAFBAAAAAAAAABhDb25jZW50cmF0ZWRQb29sc092ZXJNYXgAAAFCAAAAAAAAABxSZXdhcmRUb2tlbkNoYW5nZVdoaWxlQWN0aXZlAAABQwAAAAAAAAAVU3dhcENoYWluQW1vdW50SXNaZXJvAAAAAAABRAAAAAAAAAATUmV3YXJkQW1vdW50VG9vSGlnaAAAAAFFAAAAAAAAABhVbnN1cHBvcnRlZFRva2VuRGVjaW1hbHMAAAFGAAAAAAAAABZTd2FwU3BsaXRJbnZhbGlkU2hhcmVzAAAAAAFHAAAAAAAAABRTd2FwU3BsaXRFbmRNaXNtYXRjaAAAAUgAAAAAAAAAFVN3YXBTcGxpdFBsYW5Ub29MYXJnZQAAAAAAAUkAAAAAAAAAD1Rva2Vuc05vdFNvcnRlZAAAAAfSAAAAAAAAABFJbk1heE5vdFNhdGlzZmllZAAAAAAAB+Q=",
     "AAAABAAAAAAAAAAAAAAACVBvb2xFcnJvcgAAAAAAAAIAAAAAAAAAEVBvb2xBbHJlYWR5RXhpc3RzAAAAAAABkQAAAAAAAAAMUG9vbE5vdEZvdW5kAAABlA==",
-    "AAAAAQAAAAAAAAAAAAAAEUxpcXVpZGl0eVBvb2xEYXRhAAAAAAAAAgAAAAAAAAAHYWRkcmVzcwAAAAATAAAAAAAAAAlwb29sX3R5cGUAAAAAAAfQAAAAEUxpcXVpZGl0eVBvb2xUeXBlAAAA",
-    "AAAAAwAAAAAAAAAAAAAAEUxpcXVpZGl0eVBvb2xUeXBlAAAAAAAABAAAAAAAAAALTWlzc2luZ1Bvb2wAAAAAAAAAAAAAAAAPQ29uc3RhbnRQcm9kdWN0AAAAAAEAAAAAAAAAClN0YWJsZVN3YXAAAAAAAAIAAAAAAAAADENvbmNlbnRyYXRlZAAAAAM=",
-    "AAAAAQAAAAAAAAAAAAAAE0dsb2JhbFJld2FyZHNDb25maWcAAAAAAgAAAAAAAAAKZXhwaXJlZF9hdAAAAAAABgAAAAAAAAADdHBzAAAAAAo=",
-    "AAAAAQAAAAAAAAAAAAAAF0xpcXVpZGl0eVBvb2xSZXdhcmRJbmZvAAAAAAMAAAAAAAAACXByb2Nlc3NlZAAAAAAAAAEAAAAAAAAAD3RvdGFsX2xpcXVpZGl0eQAAAAAMAAAAAAAAAAx2b3Rpbmdfc2hhcmUAAAAE",
     "AAAAAAAAAAAAAAAEc3dhcAAAAAcAAAAAAAAABHVzZXIAAAATAAAAAAAAAAZ0b2tlbnMAAAAAA+oAAAATAAAAAAAAAAh0b2tlbl9pbgAAABMAAAAAAAAACXRva2VuX291dAAAAAAAABMAAAAAAAAACnBvb2xfaW5kZXgAAAAAA+4AAAAgAAAAAAAAAAlpbl9hbW91bnQAAAAAAAAKAAAAAAAAAAdvdXRfbWluAAAAAAoAAAABAAAACg==",
     "AAAAAAAAAAAAAAAFY2xhaW0AAAAAAAADAAAAAAAAAAR1c2VyAAAAEwAAAAAAAAAGdG9rZW5zAAAAAAPqAAAAEwAAAAAAAAAKcG9vbF9pbmRleAAAAAAD7gAAACAAAAABAAAACg==",
     "AAAAAAAAAAAAAAAHZGVwb3NpdAAAAAAFAAAAAAAAAAR1c2VyAAAAEwAAAAAAAAAGdG9rZW5zAAAAAAPqAAAAEwAAAAAAAAAKcG9vbF9pbmRleAAAAAAD7gAAACAAAAAAAAAAD2Rlc2lyZWRfYW1vdW50cwAAAAPqAAAACgAAAAAAAAAKbWluX3NoYXJlcwAAAAAACgAAAAEAAAPtAAAAAgAAA+oAAAAKAAAACg==",
@@ -1896,6 +1811,7 @@
     "AAAAAAAAAAAAAAAJcG9vbF90eXBlAAAAAAAAAgAAAAAAAAAGdG9rZW5zAAAAAAPqAAAAEwAAAAAAAAAKcG9vbF9pbmRleAAAAAAD7gAAACAAAAABAAAAEQ==",
     "AAAAAAAAAAAAAAAKZ2V0X3Rva2VucwAAAAAAAQAAAAAAAAAFaW5kZXgAAAAAAAAKAAAAAQAAA+oAAAAT",
     "AAAAAAAAAAAAAAAKaW5pdF9hZG1pbgAAAAAAAQAAAAAAAAAHYWNjb3VudAAAAAATAAAAAA==",
+    "AAAAAAAAAAAAAAAKc3dhcF9zcGxpdAAAAAAABgAAAAAAAAAEdXNlcgAAABMAAAAAAAAABnN0YWdlcwAAAAAD6gAAA+oAAAPtAAAAAgAAA+oAAAPtAAAAAwAAA+oAAAATAAAD7gAAACAAAAATAAAABAAAAAAAAAAIdG9rZW5faW4AAAATAAAAAAAAAAl0b2tlbl9vdXQAAAAAAAATAAAAAAAAAAlpbl9hbW91bnQAAAAAAAAKAAAAAAAAAAdvdXRfbWluAAAAAAoAAAABAAAACg==",
     "AAAAAAAAAAAAAAALcmVtb3ZlX3Bvb2wAAAAAAwAAAAAAAAAEdXNlcgAAABMAAAAAAAAABnRva2VucwAAAAAD6gAAABMAAAAAAAAACXBvb2xfaGFzaAAAAAAAA+4AAAAgAAAAAA==",
     "AAAAAAAAAAAAAAAMZ2V0X3Jlc2VydmVzAAAAAgAAAAAAAAAGdG9rZW5zAAAAAAPqAAAAEwAAAAAAAAAKcG9vbF9pbmRleAAAAAAD7gAAACAAAAABAAAD6gAAAAo=",
     "AAAAAAAAAAAAAAAMc3dhcF9jaGFpbmVkAAAABQAAAAAAAAAEdXNlcgAAABMAAAAAAAAAC3N3YXBzX2NoYWluAAAAA+oAAAPtAAAAAwAAA+oAAAATAAAD7gAAACAAAAATAAAAAAAAAAh0b2tlbl9pbgAAABMAAAAAAAAACWluX2Ftb3VudAAAAAAAAAoAAAAAAAAAB291dF9taW4AAAAACgAAAAEAAAAK",
@@ -1910,6 +1826,7 @@
     "AAAAAAAAAAAAAAAOc2V0X3Rva2VuX2hhc2gAAAAAAAIAAAAAAAAABWFkbWluAAAAAAAAEwAAAAAAAAAIbmV3X2hhc2gAAAPuAAAAIAAAAAA=",
     "AAAAAAAAAAAAAAAPZ2V0X3VzZXJfcmV3YXJkAAAAAAMAAAAAAAAABHVzZXIAAAATAAAAAAAAAAZ0b2tlbnMAAAAAA+oAAAATAAAAAAAAAApwb29sX2luZGV4AAAAAAPuAAAAIAAAAAEAAAAK",
     "AAAAAAAAAAAAAAAPc2V0X3Bvb2xzX3BsYW5lAAAAAAIAAAAAAAAABWFkbWluAAAAAAAAEwAAAAAAAAAFcGxhbmUAAAAAAAATAAAAAA==",
+    "AAAAAAAAAAAAAAAQZ2V0X3Jld2FyZF90b2tlbgAAAAEAAAAAAAAABnRva2VucwAAAAAD6gAAABMAAAABAAAD6AAAA+0AAAADAAAABAAAAAEAAAAM",
     "AAAAAAAAAAAAAAAQZ2V0X3Jld2FyZHNfaW5mbwAAAAMAAAAAAAAABHVzZXIAAAATAAAAAAAAAAZ0b2tlbnMAAAAAA+oAAAATAAAAAAAAAApwb29sX2luZGV4AAAAAAPuAAAAIAAAAAEAAAPsAAAAEQAAAAs=",
     "AAAAAAAAAAAAAAAQZ2V0X3RvdGFsX3NoYXJlcwAAAAIAAAAAAAAABnRva2VucwAAAAAD6gAAABMAAAAAAAAACnBvb2xfaW5kZXgAAAAAA+4AAAAgAAAAAQAAAAo=",
     "AAAAAAAAAAAAAAAQc2V0X3Jld2FyZF90b2tlbgAAAAIAAAAAAAAABWFkbWluAAAAAAAAEwAAAAAAAAAMcmV3YXJkX3Rva2VuAAAAEwAAAAA=",
@@ -1927,6 +1844,7 @@
     "AAAAAAAAAAAAAAAVY29uZmlnX2dsb2JhbF9yZXdhcmRzAAAAAAAABAAAAAAAAAAEdXNlcgAAABMAAAAAAAAACnJld2FyZF90cHMAAAAAAAoAAAAAAAAACmV4cGlyZWRfYXQAAAAAAAYAAAAAAAAADHRva2Vuc192b3RlcwAAA+oAAAPtAAAAAgAAA+oAAAATAAAABAAAAAA=",
     "AAAAAAAAAAAAAAAVZ2V0X3Rva2Vuc19mb3JfcmV3YXJkAAAAAAAAAAAAAAEAAAPsAAAD6gAAABMAAAPtAAAAAwAAAAQAAAABAAAADA==",
     "AAAAAAAAAAAAAAAVZ2V0X3Rva2Vuc19zZXRzX2NvdW50AAAAAAAAAAAAAAEAAAAK",
+    "AAAAAAAAAAAAAAAWZ2V0X3Jld2FyZF90b2tlbl9jb3VudAAAAAAAAAAAAAEAAAAE",
     "AAAAAAAAAAAAAAAWaW5pdF9jb25jZW50cmF0ZWRfcG9vbAAAAAAAAwAAAAAAAAAEdXNlcgAAABMAAAAAAAAABnRva2VucwAAAAAD6gAAABMAAAAAAAAAA2ZlZQAAAAAEAAAAAQAAA+0AAAACAAAD7gAAACAAAAAT",
     "AAAAAAAAAAAAAAAWc2V0X3Jld2FyZHNfZ2F1Z2VfaGFzaAAAAAAAAgAAAAAAAAAFYWRtaW4AAAAAAAATAAAAAAAAAAhuZXdfaGFzaAAAA+4AAAAgAAAAAA==",
     "AAAAAAAAAAAAAAAXcG9vbF9nYXVnZV9zd2l0Y2hfdG9rZW4AAAAAAwAAAAAAAAAFYWRtaW4AAAAAAAATAAAAAAAAAAV0b2tlbgAAAAAAABMAAAAAAAAAB2VuYWJsZWQAAAAAAQAAAAA=",
@@ -1957,16 +1875,6 @@
     "AAAAAAAAAAAAAAAeZ2V0X3N0YWJsZV9wb29sX3BheW1lbnRfYW1vdW50AAAAAAAAAAAAAQAAAAo=",
     "AAAAAAAAAAAAAAAfcG9vbF9nYXVnZV9nZXRfbWluX2RhaWx5X2Ftb3VudAAAAAAAAAAAAQAAAAo=",
     "AAAAAAAAAAAAAAAgZ2V0X3N0YW5kYXJkX3Bvb2xfcGF5bWVudF9hbW91bnQAAAAAAAAAAQAAAAo=",
-    "AAAAAAAAAAAAAAAgcG9vbF9nYXVnZV9zZXRfcmV3YXJkX3RocmVzaG9sZHMAAAADAAAAAAAAAAVhZG1pbgAAAAAAABMAAAAAAAAAGW1pbl9yZXdhcmRfZXF1aXZhbGVudF9kYXkAAAAAAAAKAAAAAAAAABRtaW5fZHVyYXRpb25fc2Vjb25kcwAAAAYAAAAA",
-    "AAAABAAAAAAAAAAAAAAAEkFjY2Vzc0NvbnRyb2xFcnJvcgAAAAAABwAAAAAAAAAMUm9sZU5vdEZvdW5kAAAAZQAAAAAAAAAMVW5hdXRob3JpemVkAAAAZgAAAAAAAAAPQWRtaW5BbHJlYWR5U2V0AAAAAGcAAAAAAAAADEJhZFJvbGVVc2FnZQAAAGgAAAAAAAAAE0Fub3RoZXJBY3Rpb25BY3RpdmUAAAALWgAAAAAAAAAOTm9BY3Rpb25BY3RpdmUAAAAAC1sAAAAAAAAAEUFjdGlvbk5vdFJlYWR5WWV0AAAAAAALXA==",
-    "AAAAAgAAAAAAAAAAAAAAC1dBU01EYXRhS2V5AAAAAAYAAAAAAAAAAAAAAAlUb2tlbkhhc2gAAAAAAAAAAAAAAAAAAA9Ub2tlbkZ1dHVyZVdBU00AAAAAAAAAAAAAAAAJR2F1Z2VXQVNNAAAAAAAAAAAAAAAAAAAPRnV0dXJlR2F1Z2VXQVNNAAAAAAAAAAAAAAAAEENvbnN0YW50UG9vbEhhc2gAAAAAAAAAAAAAABJTdGFibGVTd2FwUG9vbEhhc2gAAA==",
-    "AAAABAAAAAAAAAAAAAAAHExpcXVpZGl0eVBvb2xWYWxpZGF0aW9uRXJyb3IAAAASAAAAAAAAABFXcm9uZ0lucHV0VmVjU2l6ZQAAAAAAB9EAAAAAAAAADkZlZU91dE9mQm91bmRzAAAAAAfTAAAAAAAAABBBbGxDb2luc1JlcXVpcmVkAAAH1AAAAAAAAAARSW5NaW5Ob3RTYXRpc2ZpZWQAAAAAAAfVAAAAAAAAABJPdXRNaW5Ob3RTYXRpc2ZpZWQAAAAAB9YAAAAAAAAAE0Nhbm5vdFN3YXBTYW1lVG9rZW4AAAAH1wAAAAAAAAASSW5Ub2tlbk91dE9mQm91bmRzAAAAAAfYAAAAAAAAABNPdXRUb2tlbk91dE9mQm91bmRzAAAAB9kAAAAAAAAACUVtcHR5UG9vbAAAAAAAB9oAAAAAAAAAFEludmFsaWREZXBvc2l0QW1vdW50AAAH2wAAAAAAAAATQWRtaW5GZWVPdXRPZkJvdW5kcwAAAAfcAAAAAAAAAA9Vbmtub3duUG9vbFR5cGUAAAAH3QAAAAAAAAAQWmVyb1NoYXJlc0J1cm5lZAAAB94AAAAAAAAAE1Rvb01hbnlTaGFyZXNCdXJuZWQAAAAH3wAAAAAAAAASQ2Fubm90Q29tcGFyZVBvb2xzAAAAAAfhAAAAAAAAAApaZXJvQW1vdW50AAAAAAfiAAAAAAAAABNJbnN1ZmZpY2llbnRCYWxhbmNlAAAAB+MAAAAAAAAAEUluTWF4Tm90U2F0aXNmaWVkAAAAAAAH5A==",
-    "AAAABAAAAAAAAAAAAAAADFJld2FyZHNFcnJvcgAAAAIAAAAAAAAAElBhc3RUaW1lTm90QWxsb3dlZAAAAAACvQAAAAAAAAARU2FtZVJld2FyZHNDb25maWcAAAAAAAK+",
-    "AAAAAQAAAAAAAAAAAAAADlBvb2xSZXdhcmREYXRhAAAAAAAEAAAAAAAAAAthY2N1bXVsYXRlZAAAAAAKAAAAAAAAAAVibG9jawAAAAAAAAYAAAAAAAAAB2NsYWltZWQAAAAACgAAAAAAAAAJbGFzdF90aW1lAAAAAAAABg==",
-    "AAAAAQAAAAAAAAAAAAAADlVzZXJSZXdhcmREYXRhAAAAAAADAAAAAAAAAApsYXN0X2Jsb2NrAAAAAAAGAAAAAAAAABBwb29sX2FjY3VtdWxhdGVkAAAACgAAAAAAAAAIdG9fY2xhaW0AAAAK",
-    "AAAAAQAAAAAAAAAAAAAAEFBvb2xSZXdhcmRDb25maWcAAAACAAAAAAAAAApleHBpcmVkX2F0AAAAAAAGAAAAAAAAAAN0cHMAAAAACg==",
-    "AAAABAAAAAAAAAAAAAAABUVycm9yAAAAAAAAAwAAAAAAAAATQW5vdGhlckFjdGlvbkFjdGl2ZQAAAAtaAAAAAAAAAA5Ob0FjdGlvbkFjdGl2ZQAAAAALWwAAAAAAAAARQWN0aW9uTm90UmVhZHlZZXQAAAAAAAtc",
-    "AAAABAAAAAAAAAAAAAAACU1hdGhFcnJvcgAAAAAAAAEAAAAAAAAADk51bWJlck92ZXJmbG93AAAAAAH+",
-    "AAAABAAAAAAAAAAAAAAADFN0b3JhZ2VFcnJvcgAAAAQAAAAAAAAAEkFscmVhZHlJbml0aWFsaXplZAAAAAAAyQAAAAAAAAATVmFsdWVOb3RJbml0aWFsaXplZAAAAAH1AAAAAAAAAAxWYWx1ZU1pc3NpbmcAAAH2AAAAAAAAABRWYWx1ZUNvbnZlcnNpb25FcnJvcgAAAfc="
+    "AAAAAAAAAAAAAAAgcG9vbF9nYXVnZV9zZXRfcmV3YXJkX3RocmVzaG9sZHMAAAADAAAAAAAAAAVhZG1pbgAAAAAAABMAAAAAAAAAGW1pbl9yZXdhcmRfZXF1aXZhbGVudF9kYXkAAAAAAAAKAAAAAAAAABRtaW5fZHVyYXRpb25fc2Vjb25kcwAAAAYAAAAA"
   ]
 }
